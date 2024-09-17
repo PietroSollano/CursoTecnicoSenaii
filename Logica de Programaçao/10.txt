@@ -1,0 +1,43 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//char[] vogal = new char [5];
+		int contador = 0;
+		char[] vogal =
+		{
+			'a',
+			'e',
+			'i',
+			'o',
+			'u'
+		};
+		Console.WriteLine("Digite o seu texto:");
+		string texto = Console.ReadLine().ToLower();
+		Console.WriteLine("Digite uma letra:");
+		char letra = Console.ReadLine().ToLower()[0];
+		foreach (char i in vogal)
+		{
+			if (i == letra)
+			{
+				Console.WriteLine("a letra inserida é uma vogal");
+				break;
+			}
+			else
+				Console.WriteLine("a letera inserida não é uma vogal");
+			break;
+		}
+
+		foreach (char x in texto)
+		{
+			if (x == letra)
+			{
+				contador++;
+			}
+		}
+
+		Console.WriteLine($"a quantidade de vogais :{contador}");
+	}
+}

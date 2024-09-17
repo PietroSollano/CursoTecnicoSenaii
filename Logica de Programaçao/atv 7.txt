@@ -1,0 +1,28 @@
+using System;
+using System.Linq;
+
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Insira o Texto:");
+		string texto = Console.ReadLine(); // 
+		if (string.IsNullOrEmpty(texto)) // 
+		{
+			Console.WriteLine("O texto não pode estar vazio.");
+			return;
+		}
+
+		Console.WriteLine("Qual caractere você deseja contar?");
+		string entrada = Console.ReadLine();
+		if (string.IsNullOrEmpty(entrada) || entrada.Length > 1) // 
+		{
+			Console.WriteLine("Você deve inserir exatamente um caractere.");
+			return;
+		}
+
+		char caractere = entrada[0];
+		int contador = texto.Count(c => c == caractere);
+		Console.WriteLine($"O número de vezes que o caractere '{caractere}' aparece é: {contador}.");
+	}
+}

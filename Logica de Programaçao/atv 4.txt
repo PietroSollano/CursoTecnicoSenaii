@@ -1,0 +1,52 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double resultado ;
+			
+		Console.Write("digite um numero: ");
+		if (double.TryParse(Console.ReadLine(), out double num1))
+		{
+			Console.Write("digite o segundo numero: ");
+			if (double.TryParse(Console.ReadLine(), out double num2))
+			{
+				Console.Write("digite o operador: ");
+				string operador = Console.ReadLine();
+				Console.WriteLine("1) +\n");
+				Console.WriteLine("2) -\n");
+				Console.WriteLine("3) *\n");
+				Console.WriteLine("4) /\n");
+				if (int.TryParse(Console.ReadLine(), out int operador))
+				{
+				switch (operador)
+					{
+			    		case 1:
+							resultado = num1 + num2 ;
+							Console.WriteLine("O resultado da operaçao e de: ", +resultado);
+							break;
+						case  2:
+							resultado = num1 - num2 ;
+							Console.WriteLine("O resultado da operaçao e de: ", +resultado);
+							break;
+						case  3:
+							resultado = num1 * num2 ;
+							Console.WriteLine("O resultado da operaçao e de: ", +resultado);
+							break;
+						case  4:
+						if ( num2 != 0 )
+						{
+				 		resultado = num1 / num2 ;
+						Console.WriteLine("O resultado da operaçao e de: ", +resultado);
+						}
+						else
+							Console.WriteLine("Operaçao invalida");
+							break;
+			
+	}
+		}
+}
+	}
+}
+}

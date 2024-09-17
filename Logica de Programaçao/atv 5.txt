@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	
+		Console.WriteLine("Informe o Valor em Real: ") ;
+		if(double.TryParse(Console.ReadLine(), out double valor)); 
+		
+				Console.Write("informe a Moeda: ");
+				Console.Write ("1) Dolar ");
+				Console.Write ("2) Libra ");
+				Console.Write ("3) Euro ");
+				if(double.TryParse(Console.ReadLine(), out double moeda))
+				
+				switch(moeda)
+				{
+					case 1:
+					moeda = valor / 5.48;
+					Console.WriteLine($"O Valor do Dolar e: " + Math.Round(moeda,2));
+					break;
+					case 2:
+					moeda = valor / 6.09;
+					Console.WriteLine($"O Valor da Libra e: " + Math.Round(moeda,2));
+					break;
+					case 3:
+					moeda = valor / 7.14 ;
+					Console.WriteLine($"O Valor do Euro e: " + Math.Round(moeda,2));
+					break;
+				}
+	}
+}

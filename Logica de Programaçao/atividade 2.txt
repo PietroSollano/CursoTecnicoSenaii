@@ -1,0 +1,37 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double  resultado;
+		
+		Console.WriteLine("Informe o salario: ");
+		
+		
+		if (double.TryParse(Console.ReadLine(), out double salario ))
+		  {
+		if ( salario <= 3000)
+		  {
+			resultado = salario* 0.1;
+			Console.WriteLine("\nO salario e de: " + resultado);
+		  }
+		
+		else if ( salario <= 6000)
+		   {
+			resultado = salario* 0.15;
+			Console.WriteLine("\nO salario e de: " + resultado);
+		   }
+		else
+		   {
+		    resultado = salario* 0.2;
+		    Console.WriteLine("\nO salario e de: " + resultado);
+		    }
+		
+		   }
+		else
+		   {
+			Console.WriteLine("insira um numero por favor " );
+		   }
+	}
+}

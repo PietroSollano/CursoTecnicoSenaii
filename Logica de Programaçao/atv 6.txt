@@ -1,0 +1,76 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Insira um número que deseja saber a tabuada:");
+        string texto = Console.ReadLine();
+        
+        if (double.TryParse(texto, out double numero))
+        {
+            Console.WriteLine("Informe a operação:");
+            Console.WriteLine("1) +");
+            Console.WriteLine("2) -");
+            Console.WriteLine("3) /");
+            Console.WriteLine("4) *");
+
+            if (int.TryParse(Console.ReadLine(), out int operacao))
+            {
+                int contador = 1;
+                double resultado;
+
+                switch (operacao)
+                {
+                    case 1:
+                        while (contador <= 10)
+                        {
+                            resultado = numero + contador;
+                            Console.WriteLine($"{numero} + {contador} = {resultado}");
+                            contador++;
+                        }
+                        break;
+
+                    case 2:
+                        while (contador <= 10)
+                        {
+                            resultado = numero - contador;
+                            Console.WriteLine($"{numero} - {contador} = {resultado}");
+                            contador++;
+                        }
+                        break;
+
+                    case 3:
+                        while (contador <= 10)
+                        {
+                            resultado = numero / contador;
+                            Console.WriteLine($"{numero} / {contador} = {resultado}");
+                            contador++;
+                        }
+                        break;
+
+                    case 4:
+                        while (contador <= 10)
+                        {
+                            resultado = numero * contador;
+                            Console.WriteLine($"{numero} * {contador} = {resultado}");
+                            contador++;
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("Operação inválida.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida para a operação.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Número inválido.");
+        }
+    }
+}

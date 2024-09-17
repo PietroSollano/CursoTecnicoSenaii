@@ -1,0 +1,114 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        
+        Console.WriteLine("Informe o peso (kg):");
+        double peso = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Informe a altura (m):");
+        double altura = Convert.ToDouble(Console.ReadLine());
+
+       
+        double imc = peso / (altura * altura);
+        Console.WriteLine($"\nSeu IMC é: {imc:F2}");
+
+        
+        if (imc < 18.5)
+        {
+            Console.WriteLine("Você está abaixo do peso.");
+        }
+        else if (imc >= 18.5 && imc < 24.9)
+        {
+            Console.WriteLine("Você está no peso normal.");
+        }
+        else if (imc >= 25 && imc < 29.9)
+        {
+            Console.WriteLine("Você está com sobrepeso.");
+        }
+        else
+        {
+            Console.WriteLine("Você está com obesidade.");
+        }
+
+       
+        Console.WriteLine("\nVocê possui algum dos seguintes problemas? (Digite o número correspondente ou 0 para nenhum)");
+        Console.WriteLine("1) Diabetes");
+        Console.WriteLine("2) Problemas nas articulações (Ex.: artrite)");
+        Console.WriteLine("3) Problemas cardíacos");
+        Console.WriteLine("4) Obesidade");
+        Console.WriteLine("5) Dores nas costas");
+        Console.WriteLine("6) Ansiedade ou estresse");
+        int problemaSaude = Convert.ToInt32(Console.ReadLine());
+
+       
+        Console.WriteLine("\nSugestões de atividades físicas:");
+        switch (problemaSaude)
+        {
+            case 1:
+                Console.WriteLine("Para diabetes, tente:");
+                Console.WriteLine("- Caminhadas rápidas");
+                Console.WriteLine("- Natação");
+                Console.WriteLine("- Treinamento de resistência (com pesos leves a moderados)");
+                Console.WriteLine("- Exercícios aeróbicos de baixa intensidade");
+                Console.WriteLine("- Yoga (ajuda no controle do estresse e glicemia)");
+                break;
+
+            case 2:
+                Console.WriteLine("Para problemas nas articulações, tente:");
+                Console.WriteLine("- Hidroginástica");
+                Console.WriteLine("- Caminhadas leves");
+                Console.WriteLine("- Ciclismo (com baixa resistência)");
+                Console.WriteLine("- Alongamentos e yoga");
+                Console.WriteLine("- Pilates (fortalecimento sem sobrecarga articular)");
+                break;
+
+            case 3:
+                Console.WriteLine("Para problemas cardíacos, tente:");
+                Console.WriteLine("- Caminhadas moderadas");
+                Console.WriteLine("- Bicicleta leve");
+                Console.WriteLine("- Natação");
+                Console.WriteLine("- Exercícios de alongamento");
+                Console.WriteLine("- Tai Chi (exercício suave que também ajuda com equilíbrio)");
+                break;
+
+            case 4:
+                Console.WriteLine("Para obesidade, tente:");
+                Console.WriteLine("- Caminhadas e caminhadas rápidas");
+                Console.WriteLine("- Natação");
+                Console.WriteLine("- Exercícios em bicicleta ergométrica");
+                Console.WriteLine("- Exercícios aeróbicos de baixo impacto");
+                Console.WriteLine("- Hidroginástica");
+                break;
+
+            case 5:
+                Console.WriteLine("Para dores nas costas, tente:");
+                Console.WriteLine("- Caminhada em ritmo leve");
+                Console.WriteLine("- Natação ou hidroginástica");
+                Console.WriteLine("- Yoga com foco em alongamento e fortalecimento do núcleo");
+                Console.WriteLine("- Pilates (fortalecimento do núcleo)");
+                Console.WriteLine("- Exercícios de alongamento e mobilidade");
+                break;
+
+            case 6:
+                Console.WriteLine("Para ansiedade ou estresse, tente:");
+                Console.WriteLine("- Yoga");
+                Console.WriteLine("- Tai Chi");
+                Console.WriteLine("- Meditação guiada (combinada com alongamentos)");
+                Console.WriteLine("- Caminhadas ao ar livre");
+                Console.WriteLine("- Dança (para liberar endorfina)");
+                break;
+
+            case 0:
+                Console.WriteLine("Nenhum problema de saúde selecionado.");
+                break;
+
+            default:
+                Console.WriteLine("Opção inválida.");
+                break;
+        }
+    }
+}
+

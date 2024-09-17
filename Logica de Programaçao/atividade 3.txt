@@ -1,0 +1,31 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Digite a Idade:");
+		
+		if (double.TryParse(Console.ReadLine(), out double Idade ))
+		{
+			if ( Idade <= 12)
+			{
+				Console.WriteLine("E uma criança");
+			}
+			if ( Idade <= 17)
+			{
+				Console.WriteLine("E um Adolescente");
+			}
+			else if ( Idade <= 64)
+			{
+				Console.WriteLine("E um adulto");
+			}
+			if ( Idade >= 65 )
+			{
+				Console.WriteLine("E um idoso");
+			}
+		}
+		    else 
+			   Console.WriteLine("insira a Idade do usuário:");
+	}
+}
