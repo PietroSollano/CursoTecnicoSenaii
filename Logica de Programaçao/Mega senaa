@@ -1,0 +1,47 @@
+
+		Console.WriteLine("insira a quantidade de jogos: "); //Converte a string para um numero inteiro
+		string texto = Console.ReadLine(); //le a quantidade de jogos
+		int numero = int.Parse(texto); //Converte a string para um numero inteiro
+		Console.WriteLine("insira a quantidade de dezenas: "); //pede a quantidade de dezenas
+		texto = Console.ReadLine(); //le a quantidade de dezenas
+		int quantidade = int.Parse(texto);//Converte a string para um numero inteiro
+		while (quantidade < 6 || quantidade > 15) //verifica se a quantidade de dezenas esta entre 6 e 15
+		{
+			Console.WriteLine("insira novamente a quantidade de dezenas entre 6 e 15: "); //Caso o numero inserido nao esteja entre 6 a 15, pede para escrever de novo
+			texto = Console.ReadLine(); 
+			quantidade = int.Parse(texto); 
+		}
+
+		Random random = new Random(); //Gera numeros aleatorios
+		int dezenas;
+		if (quantidade >= 6)
+		{
+			for (int contadorJogos = 1; contadorJogos <= numero; contadorJogos++) //loop para gerar os jogos
+			{
+				for (int contador = 1; contador <= quantidade; contador++) //loop para gerar as dezenas
+				{
+					dezenas = random.Next(1, 61); //gerar numeros entre 1 e 61
+					if (contador == quantidade) 
+					{
+						Console.Write($"{dezenas:D2}\n"); // imprime a dezena com 2 digitos e pula para a proxima linha
+					}
+					else
+					{
+						Console.Write($"{dezenas:D2}-"); // Imprime a dezena formatada com dois digitos seguida de um hifen
+					}
+				}
+			}
+
+			Console.WriteLine("informe o valor do prêmio: "); //pede o valor do premio
+			texto = Console.ReadLine(); //le o valor do premio
+			decimal valpremio = decimal.Parse(texto); // converte o texto para um valor decimal
+			decimal valpremio6dez = valpremio * 0.75m; // calcula 75% do valor total do premio
+			decimal valpremio5dez = valpremio * 0.15m; // calcula 15% do valor total do premio
+			decimal valpremio4dez = valpremio * 0.10m; // calcula 10% do valor total do premio
+			
+			Console.WriteLine($"\n{valpremio6dez}-valor para quem acertar 6 dezenas \n"); //mostra o valor do premio de 75%
+			Console.WriteLine($"\n{valpremio5dez}-valor para quem acertar 5 dezenas \n"); //mostra o valor do premio de 15%
+			Console.WriteLine($"\n{valpremio4dez}-valor para quem acertar 4 dezenas \n"); //mostra o valor do premio de 10%
+			
+		}
+	
