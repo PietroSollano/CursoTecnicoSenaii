@@ -38,7 +38,7 @@
 
         while (continuar)
         {
-            Console.Clear();
+            
             Console.WriteLine("=== Caixa Eletrônico ===");
             Console.WriteLine("1. Ver Extrato");
             Console.WriteLine("2. Realizar Depósito");
@@ -216,10 +216,10 @@
             if (continuar)
             {
                 Console.WriteLine("Pressione qualquer tecla para continuar...");
-                Console.ReadKey();
+                Console.ReadLine();
             }
         }
-    }
-}
+    
+
              
 
